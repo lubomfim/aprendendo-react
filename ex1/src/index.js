@@ -1,6 +1,10 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
-const elemento = <h1>React 7</h1>
+import Saudacao from './componentes/Saudacao'
 
-ReactDom.render(elemento, document.getElementById('root'))
+ReactDom.render(
+  <div>
+    <Saudacao tipo="Bom dia" nome="João"/>
+  </div>,
+  document.getElementById('root'))
