@@ -9,3 +9,4 @@ Nesse diretório, você encontrará as atividades que estou desenvolvendo no apr
 - Aprendendo colocar componente com pârametro;
 - Aprendendo utilizar multiplos componentes;
 - Componentes de classe;
+- Pegando propriedades do pai.
