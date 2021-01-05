@@ -119,6 +119,7 @@ export default function Primeiro() {
 
 ### Componente com propriedade
 
+- Propriedades são somente leituras, ou seja, não podemos alterar os valores das propriedades. Podemos tratar o valor em uma nova variavel.
 - Passamos as propriedades na chamada do componente no index.js, como o exemplo:
 
 ```javascript
@@ -159,3 +160,8 @@ export default function ComParametro(props) {
 ```javascript
 // Pedro Silva, sua nota é 9 e você está Aprovado
 ```
+
+### React Fragment
+
+- É utilizado para rederizarmos mais de um elemento sem que precisemos encapsular eles em uma tag.
+- Caso não utilizemos uma tag ou o React.Fragment, retornará um erro sobre isso.

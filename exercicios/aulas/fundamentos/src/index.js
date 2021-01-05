@@ -4,11 +4,13 @@ import React from 'react'
 
 import Comp from './components/basicos/Primeiro'
 import ComParametro from './components/basicos/ComParametro'
+import Fragmento from './components/basicos/Fragmento.jsx'
 
 ReactDom.render(
-  <div className="app">
+  <React.Fragment>
     <Comp/>
     <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9"/>
-  </div>,
+    <Fragmento/>
+  </React.Fragment>,
    document.getElementById('root')
 )
