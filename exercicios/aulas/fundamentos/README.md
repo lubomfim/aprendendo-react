@@ -165,3 +165,35 @@ export default function ComParametro(props) {
 
 - É utilizado para rederizarmos mais de um elemento sem que precisemos encapsular eles em uma tag.
 - Caso não utilizemos uma tag ou o React.Fragment, retornará um erro sobre isso.
+
+```javascript
+ReactDom.render(
+  <React.Fragment>
+    <Comp />
+    <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9" />
+    <Fragmento />
+  </React.Fragment>,
+  document.getElementById("root")
+);
+```
+
+### Sintaxe com arrow function
+
+```javascript
+import React from "react";
+
+import Comp from "./components/basicos/Primeiro";
+import ComParametro from "./components/basicos/ComParametro";
+import Fragmento from "./components/basicos/Fragmento.jsx";
+
+const App = (props) => (
+  <div id="app">
+    <h1>Fundamentos React</h1>
+    <Fragmento />
+    <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9" />
+    <Comp />
+  </div>
+);
+
+export default App;
+```
