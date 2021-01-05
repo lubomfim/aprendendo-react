@@ -403,6 +403,70 @@ const FamiliaMembro = (props) => {
 export default FamiliaMembro;
 ```
 
+- Caso não tenhamos acesso as propriedades do elemento pai, será necessário realizar a seguinte função:
+
+```javascript
+import React, { cloneElement } from "react";
+
+const Familia = (props) => {
+  return (
+    <div>
+      {React.Children.map(props.children, (child, i) =>
+        cloneElement(child, { ...props, key: i })
+      )}
+    </div>
+  );
+};
+
+export default Familia;
+```
+
+### Criando uma lista
+
+App.jsx:
+
+```javascript
+import React from "react";
+import alunos from "../../data/alunos";
+
+const ListaAlunos = (props) => {
+  const lis = alunos.map((aluno) => {
+    const aprovacao = aluno.nota < 5 ? "Reprovado" : "Aprovado";
+    return (
+      <li key={aluno.id} style={{ marginBottom: "10px" }}>
+        {aluno.id}
+        {")"} {aluno.nome} tem a nota: <strong>{aluno.nota}</strong> e está <strong>{aprovacao}</strong>
+      </li>
+    );
+  });
+  return (
+    <div>
+      <ul style={{ listStyle: "none" }}>{lis}</ul>
+    </div>
+  );
+};
+
+export default ListaAlunos;
+```
+
+```javascript
+const Lista = [
+  { id: 1, nome: "Ana", nota: 9.2 },
+  { id: 2, nome: "Pedro", nota: 8 },
+  { id: 3, nome: "Roger", nota: 5.5 },
+  { id: 4, nome: "Batiti", nota: 2 },
+  { id: 5, nome: "Leonardo", nota: 5 },
+  { id: 6, nome: "Adriana", nota: 8.7 },
+  { id: 7, nome: "Rubens", nota: 10 },
+  { id: 8, nome: "Marcella", nota: 9 },
+  { id: 9, nome: "Douglas", nota: 6 },
+  { id: 10, nome: "Felippe", nota: 3.2 },
+  { id: 11, nome: "Eduardo", nota: 5.4 },
+];
+
+export default Lista;
+```
+
 ## Desafios
 
 ### Número Aleatório

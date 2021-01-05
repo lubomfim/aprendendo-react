@@ -8,13 +8,17 @@ import Sortear from './components/basicos/SorteiarNumero'
 import Card from './components/layout/Card'
 import Familia from './components/basicos/Familia'
 import FamiliaMembro from './components/basicos/FamiliaMebro'
+import ListaAlunos from './components/repeticao/ListaAlunos'
 
 const App = props =>
   <div id="app">
     <h1>Fundamentos React</h1>
    <div className="container">
+    <Card titulo="#06 Repetição" color="white">
+      <ListaAlunos />
+    </Card>
     <Card titulo="#05 Componentes com filho" color="pink">
-      <Familia sobrenome="Ferreira">
+      <Familia sobrenome="Soares">
         <FamiliaMembro nome="Pedro"/>
         <FamiliaMembro nome="Maria"/>
         <FamiliaMembro nome="Lucia"/>
