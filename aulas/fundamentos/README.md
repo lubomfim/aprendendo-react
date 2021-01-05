@@ -197,3 +197,61 @@ const App = (props) => (
 
 export default App;
 ```
+
+## Desafios
+
+### Número Aleatório
+
+- Criar um componente que sorteie um número entre um máximo e um mínimo.
+
+Resolução:
+
+```javascript
+import React from "react";
+
+import Comp from "./components/basicos/Primeiro";
+import ComParametro from "./components/basicos/ComParametro";
+import Fragmento from "./components/basicos/Fragmento.jsx";
+import Sortear from "./components/basicos/SorteiarNumero";
+
+const App = (props) => (
+  <div id="app">
+    <h1>Fundamentos React</h1>
+    <Sortear min={1} max={60} />
+    <Fragmento />
+    <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9" />
+    <Comp />
+  </div>
+);
+
+export default App;
+```
+
+```javascript
+import React from "react";
+
+const Sortear = (props) => {
+  const { min, max } = props;
+  const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  return (
+    <div>
+      <h2>Valor Aleatório</h2>
+      <p>
+        <strong>Valor Mínimo: </strong>
+        {min}
+      </p>
+      <p>
+        <strong>Valor Máximo: </strong>
+        {max}
+      </p>
+      <p>
+        <strong>Valor Sorteado: </strong>
+        {numeroAleatorio}
+      </p>
+    </div>
+  );
+};
+
+export default Sortear;
+```
