@@ -6,11 +6,20 @@ import ComParametro from './components/basicos/ComParametro'
 import Fragmento from './components/basicos/Fragmento.jsx'
 import Sortear from './components/basicos/SorteiarNumero'
 import Card from './components/layout/Card'
+import Familia from './components/basicos/Familia'
+import FamiliaMembro from './components/basicos/FamiliaMebro'
 
 const App = props =>
   <div id="app">
     <h1>Fundamentos React</h1>
    <div className="container">
+    <Card titulo="#05 Componentes com filho" color="pink">
+      <Familia sobrenome="Ferreira">
+        <FamiliaMembro nome="Pedro"/>
+        <FamiliaMembro nome="Maria"/>
+        <FamiliaMembro nome="Lucia"/>
+      </Familia>
+    </Card>
     <Card titulo="#04 Sorteio número aleatório" color="lightblue">
       <Sortear min={0} max={60}/>
     </Card>

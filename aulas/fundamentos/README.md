@@ -325,6 +325,84 @@ const Card = (props) => {
 export default Card;
 ```
 
+## Componentes filhos
+
+- As propriedades não passam de pai para filho de forma automatica, é necessário deixar isso explicito no código.
+
+App.jsx:
+
+```javascript
+import "./App.css";
+import React from "react";
+
+import Comp from "./components/basicos/Primeiro";
+import ComParametro from "./components/basicos/ComParametro";
+import Fragmento from "./components/basicos/Fragmento.jsx";
+import Sortear from "./components/basicos/SorteiarNumero";
+import Card from "./components/layout/Card";
+import Familia from "./components/basicos/Familia";
+
+const App = (props) => (
+  <div id="app">
+    <h1>Fundamentos React</h1>
+    <div className="container">
+      <Card titulo="#05 Componentes com filho" color="pink">
+        <Familia sobrenome="Ferreira" />
+      </Card>
+      <Card titulo="#04 Sorteio número aleatório" color="lightblue">
+        <Sortear min={0} max={60} />
+      </Card>
+      <Card titulo="#03 React.Fragment" color="lightyellow">
+        <Fragmento />
+      </Card>
+      <Card titulo="#02 Situação do aluno" color="lightgreen">
+        <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9" />
+      </Card>
+      <Card titulo="#01 Primeiro componente" color="orange">
+        <Comp />
+      </Card>
+    </div>
+  </div>
+);
+
+export default App;
+```
+
+Familia.jsx:
+
+```javascript
+import React from "react";
+import FamiliaMembro from "./FamiliaMebro";
+
+const Familia = (props) => {
+  return (
+    <div>
+      <FamiliaMembro nome="Pedro" sobrenome={props.sobrenome} />
+      <FamiliaMembro nome="Maria" {...props} />
+      <FamiliaMembro nome="Lucia" sobrenome="Silva" />
+    </div>
+  );
+};
+
+export default Familia;
+```
+
+FamiliaMembro.jxs:
+
+```javascript
+import React from "react";
+
+const FamiliaMembro = (props) => {
+  return (
+    <div>
+      {props.nome} <strong>{props.sobrenome}</strong>
+    </div>
+  );
+};
+
+export default FamiliaMembro;
+```
+
 ## Desafios
 
 ### Número Aleatório
