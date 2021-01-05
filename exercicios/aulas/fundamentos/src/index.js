@@ -8,7 +8,7 @@ import ComParametro from './components/basicos/ComParametro'
 ReactDom.render(
   <div className="app">
     <Comp/>
-    <ComParametro titulo="Segundo Componente" subtitle="Muito legal!"/>
+    <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9"/>
   </div>,
    document.getElementById('root')
 )

@@ -130,9 +130,9 @@ import Comp from "./components/basicos/Primeiro";
 import ComParametro from "./components/basicos/ComParametro";
 
 ReactDom.render(
-  <div>
+  <div className="app">
     <Comp />
-    <ComParametro titulo="Segundo Componente" subtitle="Muito legal!" />
+    <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9" />
   </div>,
   document.getElementById("root")
 );
@@ -144,11 +144,18 @@ ReactDom.render(
 import React from "react";
 
 export default function ComParametro(props) {
+  const status = props.nota >= 7 ? "Aprovado" : "Recuperação";
   return (
     <div>
       <h2>{props.titulo}</h2>
-      <h3>{props.subtitle}</h3>
+      <p>
+        {props.nome}, sua nota é {props.nota} e você está {status}
+      </p>
     </div>
   );
 }
+```
+
+```javascript
+// Pedro Silva, sua nota é 9 e você está Aprovado
 ```

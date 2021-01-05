@@ -1,10 +1,11 @@
 import React from 'react'
 
 export default function ComParametro(props) {
+  const status = props.nota >= 7 ? 'Aprovado' : 'Recuperação'
   return (
      <div>
        <h2>{props.titulo}</h2>
-       <h3>{props.subtitle}</h3>
+       <p>{props.nome}, sua nota é {props.nota} e você está {status}</p>
      </div>
   )
 }
