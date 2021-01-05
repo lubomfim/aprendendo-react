@@ -5,7 +5,7 @@ import React from 'react'
 const TabelaProduto = props => {
   const tr = produtos.map(elemento => {
     return (
-      <tr key={elemento.id}>
+      <tr key={elemento.id} className={elemento.id % 2 === 0 ? 'par' : 'impar' }>
         <td>{elemento.id}</td>
         <td>{elemento.nome}</td>
         <td>{`${elemento.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`}</td>

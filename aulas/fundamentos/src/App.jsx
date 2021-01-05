@@ -15,7 +15,7 @@ const App = props =>
   <div id="app">
     <h1>Fundamentos React</h1>
    <div className="container">
-    <Card titulo="#06 Tabela produtos" color="gold">
+    <Card titulo="#07 Tabela produtos" color="gold">
       <TabelaProduto />
     </Card>
     <Card titulo="#06 Tabela alunos" color="white">
