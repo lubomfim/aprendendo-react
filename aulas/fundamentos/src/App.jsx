@@ -9,12 +9,16 @@ import Card from './components/layout/Card'
 import Familia from './components/basicos/Familia'
 import FamiliaMembro from './components/basicos/FamiliaMebro'
 import ListaAlunos from './components/repeticao/ListaAlunos'
+import TabelaProduto from './components/repeticao/TabelaProdutos'
 
 const App = props =>
   <div id="app">
     <h1>Fundamentos React</h1>
    <div className="container">
-    <Card titulo="#06 Repetição" color="white">
+    <Card titulo="#06 Tabela produtos" color="gold">
+      <TabelaProduto />
+    </Card>
+    <Card titulo="#06 Tabela alunos" color="white">
       <ListaAlunos />
     </Card>
     <Card titulo="#05 Componentes com filho" color="pink">
