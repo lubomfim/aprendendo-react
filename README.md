@@ -1,12 +1,10 @@
-# Aprendendo React
+# Aprendendo React :sparkles:
 
-Nesse diretório, você encontrará as atividades que estou desenvolvendo no aprendizado de react.
+Repositorio destinado a pratica/aprendizado de React pelo curso [React + Redux](https://www.udemy.com/course/react-redux-pt) pela Udemy.
 
 ## O que estou aprendendo
 
-- Instalei no global o create-react-app (cria uma aplicação básica para usar de referência.) e adicionei meu primeiro código;
-- Criei meu primeiro código em react e componente baseado em função;
-- Aprendendo colocar componente com pârametro;
-- Aprendendo utilizar multiplos componentes;
-- Componentes de classe;
-- Pegando propriedades do pai.
+[x] Primeira renderização na tela
+[ ] Componentes
+[ ] Componente com propriedade
+[ ] Fragment
