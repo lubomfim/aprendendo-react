@@ -4,14 +4,23 @@ import Comp from './components/basicos/Primeiro'
 import ComParametro from './components/basicos/ComParametro'
 import Fragmento from './components/basicos/Fragmento.jsx'
 import Sortear from './components/basicos/SorteiarNumero'
+import Card from './components/layout/Card'
 
 const App = props =>
   <div id="app">
     <h1>Fundamentos React</h1>
-    <Sortear min={0} max={60}/>
-    <Fragmento/>
-    <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9"/>
-    <Comp/>
+    <Card titulo="#04 Sorteio número aleatório">
+      <Sortear min={0} max={60}/>
+    </Card>
+    <Card titulo="#03 React.Fragment">
+      <Fragmento/>
+    </Card>
+    <Card titulo="#02 Situação do aluno">
+      <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9"/>
+    </Card>
+    <Card titulo="#01 Primeiro componente">
+      <Comp/>
+    </Card>
   </div>
 
 export default App

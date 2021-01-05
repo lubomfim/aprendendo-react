@@ -198,6 +198,76 @@ const App = (props) => (
 export default App;
 ```
 
+### Uso de classe
+
+- No React utilizamos a classe utilizando o atributo className para que possamos estilizar no CSS. Diferente do HTMl, que é apenas class.
+
+```javascript
+import React from "react";
+import "./Card.css";
+
+const Card = (props) => {
+  return (
+    <div className="Card">
+      <div className="Title">Contéudo</div>
+      <div className="Content">{props.titulo}</div>
+    </div>
+  );
+};
+
+export default Card;
+```
+
+### props.children
+
+- Com props.children, você consegue pegar todos os filhos do componente que estão em App.js.
+
+```javascript
+import React from "react";
+
+import Comp from "./components/basicos/Primeiro";
+import ComParametro from "./components/basicos/ComParametro";
+import Fragmento from "./components/basicos/Fragmento.jsx";
+import Sortear from "./components/basicos/SorteiarNumero";
+import Card from "./components/layout/Card";
+
+const App = (props) => (
+  <div id="app">
+    <h1>Fundamentos React</h1>
+    <Card titulo="Sorteio número aleatório">
+      <Sortear min={0} max={60} />
+    </Card>
+    <Card titulo="React.Fragment">
+      <Fragmento />
+    </Card>
+    <Card titulo="Situação do aluno">
+      <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9" />
+    </Card>
+    <Card titulo="Primeiro componente">
+      <Comp />
+    </Card>
+  </div>
+);
+
+export default App;
+```
+
+```javascript
+import React from "react";
+import "./Card.css";
+
+const Card = (props) => {
+  return (
+    <div className="Card">
+      <div className="Title">{props.titulo}</div>
+      <div className="Content">{props.children}</div>
+    </div>
+  );
+};
+
+export default Card;
+```
+
 ## Desafios
 
 ### Número Aleatório
