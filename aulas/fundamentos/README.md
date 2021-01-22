@@ -313,7 +313,7 @@ export default Card;
 
 - Nesse exemplo, a cor foi passada pela props color e no componente filho é feito a verificação se essa props existe, caso não, ele tem uma cor padrão estabelecida.
 
-## Componentes filhos
+### Componentes filhos
 
 - As propriedades não passam de pai para filho de forma automatica, é necessário deixar isso explicito no código.
 
@@ -617,6 +617,49 @@ const Input = (props) => {
 };
 
 export default Input;
+```
+
+### Componentes baseados em classe
+
+- Componentes criados com a sintaxe de classe do ES6.
+- Você possuí todos os métodos de ciclos de vidas.
+
+```javascript
+import React, { Component } from "react";
+
+class Contador extends Component {
+  render() {
+    return <div>Olá</div>;
+  }
+}
+
+export default Contador;
+```
+
+- setState é utilizado para alterar o state inicial
+- nem sempre o this aponta para o objeto atual e é disponibilizado diversas maneiras de apontar o this para o objeto correto. São elas:
+
+```javascript
+// usando constructor
+
+class Testando extends Component {
+  constructor(props) {
+    super(props)
+
+    this.funcao = this.funcao.bind(this)
+  }
+}
+
+// usando arrow function no corpo do componente - a mais simples :)
+
+funcao = () => { this.setState([/* código */]) }
+
+// usando arrow function na chamada da função
+
+funcao() { this.setState ({/* código */})}
+
+<button onClick={_ => this.funcao()}><button/>
+
 ```
 
 ## Desafios

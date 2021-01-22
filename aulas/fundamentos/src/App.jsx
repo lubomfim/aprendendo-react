@@ -15,12 +15,15 @@ import UsuarioInfo from './components/condicional/UsuarioInfo'
 import DiretaPai from './components/comunicacao/DiretaPai'
 import IndiretaPai from './components/comunicacao/IndiretaPai'
 import Input from './components/formulario/Input'
+import Contador from './components/contador/Contador'
 
 const App = props =>
   <div id="app">
     <h1>Fundamentos React</h1>
    <div className="container">
-     
+    <Card titulo="#12 Contador" color="white">
+      <Contador numeroInicial={10} />
+    </Card>
     <Card titulo="#11 Componente Controlado (Input)" color="yellow">
       <Input />
     </Card>
