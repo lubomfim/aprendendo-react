@@ -22,7 +22,7 @@ const App = props =>
     <h1>Fundamentos React</h1>
    <div className="container">
     <Card titulo="#12 Contador" color="white">
-      <Contador numeroInicial={10} />
+      <Contador />
     </Card>
     <Card titulo="#11 Componente Controlado (Input)" color="yellow">
       <Input />

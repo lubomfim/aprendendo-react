@@ -1,0 +1,14 @@
+.contador button {
+  border-radius: 50%;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  color: black;
+  background-color: yellow;
+  outline: none;
+  cursor: pointer;
+}
+
+.contador button:first-of-type {
+  margin-right: 20px;
+}
