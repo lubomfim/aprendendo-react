@@ -590,6 +590,35 @@ const IndiretaFilho = (props) => {
 export default IndiretaFilho;
 ```
 
+### Componentes Controlados
+
+- Entradas como "<input />" controlam o valor de si próprio e ele mesmo salvo o seu valor. E é indicado que esses elementos sejam controlados pelo React e para isso acontecer, podemos guardar a entrada do úsuario no seu estado sempre que ocorrem uma mudança. No exemplo a seguir, foi utilizado o evento onChange no input para que sempre que houver uma mudança na sua entrada, ele chame a função que atualiza o estado do elemento.
+- Se você quer que esse input seja apenas de leitura, deve adicionar um readOnly.
+- Com componentes controlados, você consegue controlar o valor do estado do elemento.
+- Se passarmos undefined como valor, ele deixa de ser controlado e avisar erro.
+
+```javascript
+import React, { useState } from "react";
+import "./Input.css";
+
+const Input = (props) => {
+  const [valor, setValor] = useState("inicial");
+
+  function mudarValor(e) {
+    setValor(e.target.value);
+  }
+  return (
+    <div className="input">
+      <input value={valor} onChange={mudarValor} />
+      <input value={valor} readOnly />
+      <input value={undefined} />
+    </div>
+  );
+};
+
+export default Input;
+```
+
 ## Desafios
 
 ### Número Aleatório
