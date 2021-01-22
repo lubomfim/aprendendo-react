@@ -6,9 +6,16 @@
 
 - [React-dom](#React-dom)
 - [JSX](#JSX)
-- [Referenciando arquivo CSS](#Referenciando)
-- [Criando nosso primeiro componente]()
-- [Componente com propriedade]()
+- [Referenciando arquivo CSS](#Referenciando-um-arquivo-CSS)
+- [Criando nosso primeiro componente](#Criando-nosso-primeiro-componente)
+- [Componente com propriedade](#Componente-com-propriedade)
+- [React Fragment](#React-Fragment)
+- [Uso de Classes](#Uso-de-classe)
+- [props.children](#props.children)
+- [Estilizando](#Style)
+- [Componentes filhos](#Componentes-filhos)
+- [Criando uma lista](#Criando-uma-lista)
+- [Desafios](#Desafios)
 
 ## Aulas
 
