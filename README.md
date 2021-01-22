@@ -5,6 +5,11 @@ Repositório destinado a pratica/aprendizado de React pelo curso [React + Redux]
 ## O que estou aprendendo
 
 - [x] Primeira renderização na tela
-- [ ] Componentes
-- [ ] Componente com propriedade
-- [ ] Fragment
+- [x] Componentes Funcionais
+- [x] Propriedades
+- [x] Estilização
+- [x] Comunicação Direta e Indireta
+- [ ] Componente com Estado
+- [ ] Componente Controlado
+- [ ] React Router
+- [ ] React Hooks
