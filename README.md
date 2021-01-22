@@ -9,7 +9,7 @@ Repositório destinado a pratica/aprendizado de React pelo curso [React + Redux]
 - [x] Propriedades
 - [x] Estilização
 - [x] Comunicação Direta e Indireta
-- [ ] Componente com Estado
+- [x] Componente com Estado
 - [ ] Componente Controlado
 - [ ] React Router
 - [ ] React Hooks

@@ -530,6 +530,66 @@ const IndiretaFilho = (props) => {
 export default IndiretaFilho;
 ```
 
+- E essa comunicação pode ser feita de outra forma, com estados.
+
+### Comunicação com estados
+
+- Até a versão 16.8, não era possível ter estados em componentes funcionais. Apenas em componentes de classe.
+- A partir do useState podemos utilizar estados no nosso componente. useState retorna um array, sendo o primeiro elemento o valor e a segunda é uma função utilizada para alterar o valor.
+
+```javascript
+import React, { useState } from "react";
+import IndiretaFilho from "./IndiretaFilho";
+
+const IndiretaPai = (props) => {
+  const [nome, setNome] = useState("");
+  const [idade, setIdade] = useState(0);
+  const [nerd, setNerd] = useState(false);
+
+  function fornecerInformacoes(nome, idade, nerd) {
+    setNome(nome);
+    setIdade(idade);
+    setNerd(nerd);
+  }
+
+  return (
+    <div>
+      <div>Pai</div>
+      <div>{nome}</div>
+      <div>{idade}</div>
+      <div>{nerd ? "Vdd" : ""}</div>
+      <IndiretaFilho quandoClicar={fornecerInformacoes}></IndiretaFilho>
+    </div>
+  );
+};
+
+export default IndiretaPai;
+```
+
+Filho
+
+```javascript
+import React from "react";
+
+const IndiretaFilho = (props) => {
+  const gerarIdade = parseInt(Math.random() * 20) + 50;
+  const gerarNerd = () => Math.random() > 0.5;
+
+  return (
+    <div>
+      <div>Filho</div>
+      <button
+        onClick={(_) => props.quandoClicar("João", gerarIdade, gerarNerd)}
+      >
+        Fornecer Informações
+      </button>
+    </div>
+  );
+};
+
+export default IndiretaFilho;
+```
+
 ## Desafios
 
 ### Número Aleatório
