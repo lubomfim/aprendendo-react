@@ -4,7 +4,7 @@
 
 ## Índice
 
-- [React-dom]()
+- [React-dom](#React-dom)
 - [JSX]()
 - [Referenciando arquivo CSS]()
 - [Criando nosso primeiro componente]()
