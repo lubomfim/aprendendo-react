@@ -11,7 +11,7 @@
 - [Componente com propriedade](#Componente-com-propriedade)
 - [React Fragment](#React-Fragment)
 - [Uso de Classes](#Uso-de-classe)
-- [props.children](#props.children)
+- [props.children](#propschildren)
 - [Estilizando](#Style)
 - [Componentes filhos](#Componentes-filhos)
 - [Criando uma lista](#Criando-uma-lista)
@@ -45,7 +45,7 @@ ReactDom.render("Olá React", document.getElementById("root"));
 
 - Sintaxe JSX, parece html, mas é código javascript que será renderizado no HTML.
 - Sempre importar o react quando for usar sintaxe JSX.
-- Quando utilizamos a extensão .jsx, facilita o trabalho com o React, pois a IDE conseguirá indiciar possíveis soluções e caso de erro, mas caso queiramos trabalhar com .js, não tem problema.
+- Quando utilizamos a extensão .jsx, facilita o trabalho com o React, pois a IDE conseguirá indicar possíveis soluções em situações de erro, mas caso queiramos trabalhar com .js, não tem problema.
 
 ```javascript
 import ReactDom from "react-dom";
@@ -184,30 +184,9 @@ ReactDom.render(
 );
 ```
 
-### Sintaxe com arrow function
-
-```javascript
-import React from "react";
-
-import Comp from "./components/basicos/Primeiro";
-import ComParametro from "./components/basicos/ComParametro";
-import Fragmento from "./components/basicos/Fragmento.jsx";
-
-const App = (props) => (
-  <div id="app">
-    <h1>Fundamentos React</h1>
-    <Fragmento />
-    <ComParametro titulo="Alunos" nome="Pedro Silva" nota="9" />
-    <Comp />
-  </div>
-);
-
-export default App;
-```
-
 ### Uso de classe
 
-- No React utilizamos a classe utilizando o atributo className para que possamos estilizar no CSS. Diferente do HTMl, que é apenas class.
+- No React utilizamos o atributo classe como className, diferente do html, que é apenas class.
 
 ```javascript
 import React from "react";
@@ -227,7 +206,7 @@ export default Card;
 
 ### props.children
 
-- Com props.children, você consegue pegar todos os filhos do componente que estão em App.js.
+- Com props.children, você consegue pegar o filho do componente que está em App.js. Por exemplo, o filho do primeiro "<Card />" é o "<Sortear />", do segundo é "<Fragmento />".
 
 ```javascript
 import React from "react";
@@ -331,6 +310,8 @@ const Card = (props) => {
 
 export default Card;
 ```
+
+- Nesse exemplo, a cor foi passada pela props color e no componente filho é feito a verificação se essa props existe, caso não, ele tem uma cor padrão estabelecida.
 
 ## Componentes filhos
 
@@ -470,6 +451,83 @@ const Lista = [
 ];
 
 export default Lista;
+```
+
+### Renderização Condicional
+
+- Nesse parte, criamos um componente que valida com dicionais se a propriedade existe ou não. Fizemos isso de duas maneiras, sendo a primeira validando com ternario diretamente no componente. A outra é criando um arquivo js, que leva uma função que retorna as propriedades do filhos caso existe a propriedade no pai.
+
+```javascript
+import React from "react";
+
+const ParOuImpar = (props) => {
+  const isPar = props.numero % 2 === 0;
+  return <div>{isPar ? <span>Par</span> : <span>Ímpar</span>}</div>;
+};
+
+export default ParOuImpar;
+```
+
+```javascript
+const Se = (props) => {
+  if (props.test) {
+    return props.children;
+  } else {
+    return false;
+  }
+};
+
+export default Se;
+```
+
+### Comunicação direta
+
+- A comunicação direta é feita por meio das props. Quando passandos as propriedades de pai para filho por meio de props. Como foi feito até agora nos exercicíos.
+
+### Comunicação indireta
+
+- Quando não há uma referência do filho no pai e o filho precisa acessar as propriedades do pai.
+- No exercício, utilizamos uma função no elemento pai e ela é chamada ao clicar no button do elemento filho.
+
+Pai
+
+```javascript
+import React from "react";
+import IndiretaFilho from "./IndiretaFilho";
+
+const IndiretaPai = (props) => {
+  function fornecerInformacoes(nome, idade, nerd) {
+    console.log(nome, idade, nerd);
+  }
+
+  return (
+    <div>
+      <div>Pai</div>
+      <IndiretaFilho quandoClicar={fornecerInformacoes}></IndiretaFilho>
+    </div>
+  );
+};
+
+export default IndiretaPai;
+```
+
+Filho
+
+```javascript
+import React from "react";
+
+const IndiretaFilho = (props) => {
+  return (
+    <div>
+      <div>Filho</div>
+      <button onClick={(e) => props.quandoClicar("João", 53, true)}>
+        Fornecer Informações
+      </button>
+    </div>
+  );
+};
+
+export default IndiretaFilho;
 ```
 
 ## Desafios

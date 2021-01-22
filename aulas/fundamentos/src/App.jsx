@@ -10,11 +10,26 @@ import Familia from './components/basicos/Familia'
 import FamiliaMembro from './components/basicos/FamiliaMebro'
 import ListaAlunos from './components/repeticao/ListaAlunos'
 import TabelaProduto from './components/repeticao/TabelaProdutos'
+import ParOuImpar from './components/condicional/ParOuImpar'
+import UsuarioInfo from './components/condicional/UsuarioInfo'
+import DiretaPai from './components/comunicacao/DiretaPai'
+import IndiretaPai from './components/comunicacao/IndiretaPai'
 
 const App = props =>
   <div id="app">
     <h1>Fundamentos React</h1>
    <div className="container">
+    <Card titulo="#10 Comunicação Indireta" color="lightblue">
+      <IndiretaPai />
+    </Card>
+    <Card titulo="#09 Comunicação Direta" color="green">
+      <DiretaPai />
+    </Card>
+    <Card titulo="#08 Par ou Ìmpar" color="red">
+      <ParOuImpar numero={20}/>
+      <UsuarioInfo usuario={{nome: 'Lucas'}}/>
+      <UsuarioInfo usuario={{email: 'Lucas'}}/>
+    </Card>
     <Card titulo="#07 Tabela produtos" color="gold">
       <TabelaProduto />
     </Card>
