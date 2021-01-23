@@ -1,8 +1,8 @@
-# Aprendendo React :sparkles:
+# Aprendendo React ✨
 
 Repositório destinado a pratica/aprendizado de React pelo curso [React + Redux](https://www.udemy.com/course/react-redux-pt) na Udemy.
 
-## O que estou aprendendo
+## O que estou aprendendo 🎨
 
 - [x] Primeira renderização na tela
 - [x] Componentes Funcionais
@@ -10,6 +10,12 @@ Repositório destinado a pratica/aprendizado de React pelo curso [React + Redux]
 - [x] Estilização
 - [x] Comunicação Direta e Indireta
 - [x] Componente com Estado
-- [ ] Componente Controlado
+- [x] Componente Controlado
 - [ ] React Router
 - [ ] React Hooks
+
+## Desafios :alembic:
+
+- [x] Número Aleatório
+- [x] Criando uma tabela
+- [x] Gerar número da MegaSena
