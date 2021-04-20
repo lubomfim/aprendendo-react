@@ -11,8 +11,8 @@ Repositório destinado a pratica/aprendizado de React pelo curso [React + Redux]
 - [x] Comunicação Direta e Indireta
 - [x] Componente com Estado
 - [x] Componente Controlado
-- [ ] React Router
-- [ ] React Hooks
+- [x] React Router
+- [x] React Hooks
 
 ## Desafios :alembic:
 
